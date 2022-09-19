@@ -34,6 +34,17 @@ class Rectangle:
         """Rectangle width getter"""
         return self.__width
 
+    @width.setter
+    def width(self, value):
+        """Rectangle width setter"""
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
         """Rectangle height getter"""
         return self.__height
 
@@ -55,5 +66,4 @@ class Rectangle:
         or nothing if height/width are 0"""
         if self.__height == 0 or self.__width == 0:
             return
-        return (self.__height * 2) + (self.__widt
-
+        return (self.__height * 2) + (self.__width * 2)
